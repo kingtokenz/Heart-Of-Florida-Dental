@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Of Florida Dental | Your Smile. Your Masterpiece.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1E2B44',
+                        gold: '#CFA68A',
+                        'gold-light': '#E5C4A7',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap');
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .glass {
+            background: rgba(30, 43, 68, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(207, 166, 138, 0.2);
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(207, 166, 138, 0.4);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+
+        .accordion-item.active i {
+            transform: rotate(180deg);
+        }
+
+        /* AI Agent Animations */
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(207, 166, 138, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(207, 166, 138, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(207, 166, 138, 0); }
+        }
+        .ai-pulse {
+            animation: pulse-gold 2s infinite;
+        }
+        
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: #CFA68A;
+            border-radius: 50%;
+            display: inline-block;
+            animation: typing 1s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body class="bg-white text-navy font-sans overflow-x-hidden">
+
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass border-b border-gold/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 border-2 border-gold rounded-full flex items-center justify-center">
+                    <span class="text-gold font-bold text-xl">H</span>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-white font-serif font-bold text-lg leading-tight uppercase tracking-widest">Heart Of Florida</h1>
+                    <p class="text-gold text-xs uppercase tracking-[0.2em]">Dental Practice</p>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-10 text-white/90 text-sm font-semibold uppercase tracking-widest">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <a href="#services" class="hover:text-gold transition">Services</a>
+                <a href="#reviews" class="hover:text-gold transition">Reviews</a>
+                <a href="#faq" class="hover:text-gold transition">FAQ</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:+18005550199" class="bg-gold hover:bg-gold-light text-navy px-6 py-2.5 rounded-full font-bold text-sm transition-all gold-glow flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i> (800) 555-0199
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Cinematic Background Video/Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000" alt="Pristine Dental Office" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/60 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 pt-20" data-aos="fade-up">
+            <div class="max-w-3xl">
+                <h2 class="text-gold font-semibold uppercase tracking-[0.3em] mb-4" data-aos="fade-up" data-aos-delay="100">Welcome to HOF Dental</h2>
+                <h1 class="text-white font-serif text-6xl md:text-8xl font-black mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
+                    Your Smile.<br>Your Masterpiece.
+                </h1>
+                <p class="text-white/80 text-xl md:text-2xl mb-10 font-light max-w-xl" data-aos="fade-up" data-aos-delay="300">
+                    Experience elite dental artistry and premium care designed for the Florida elite.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#booking" class="bg-gold hover:bg-gold-light text-navy px-10 py-5 rounded-full font-bold text-lg transition-all gold-glow text-center">
+                        Book Your Free Consultation
+                    </a>
+                    <a href="#services" class="border-2 border-white hover:bg-white hover:text-navy text-white px-10 py-5 rounded-full font-bold text-lg transition-all text-center">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute -top-6 -left-6 w-full h-full border-4 border-gold rounded-2xl z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=800" alt="Dr. Ciaravino" class="relative z-10 rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-8 -right-8 glass p-6 rounded-xl z-20" data-aos="zoom-in" data-aos-delay="300">
+                        <p class="text-gold font-bold text-center">20+ Years</p>
+                        <p class="text-white text-xs uppercase tracking-widest text-center">Experience</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <span class="text-gold font-bold uppercase tracking-widest block mb-4">Meet Dr. Ciaravino</span>
+                    <h2 class="text-navy font-serif text-4xl md:text-5xl font-black mb-8 leading-tight italic">
+                        Compassionate Care,<br>Unparalleled Expertise.
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        As the founder and lead practitioner of HOF Dental, Dr. Ciaravino brings over 20 years of experience in transformative dentistry. A board-certified specialist dedicated to painless, personalized care, he believes every patient deserves a VIP experience. His philosophy combines state-of-the-art digital technology with a gentle, family-oriented approach that has earned him a stellar 4.9/5.0 rating from the Florida community.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-certificate text-gold text-2xl"></i>
+                            <span class="font-bold text-navy">ADA Certified</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-users text-gold text-2xl"></i>
+                            <span class="font-bold text-navy">Family-Oriented</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-microscope text-gold text-2xl"></i>
+                            <span class="font-bold text-navy">Digital X-Rays</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-shield-alt text-gold text-2xl"></i>
+                            <span class="font-bold text-navy">State-of-the-Art</span>
+                        </div>
+                    </div>
+                    <div class="inline-block bg-navy/5 border border-gold/20 px-6 py-3 rounded-xl italic text-navy font-semibold">
+                        "Your comfort is my absolute priority." — Dr. Ciaravino
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-navy text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-gold font-bold uppercase tracking-[0.3em] block mb-4 italic">Exclusive Services</span>
+                <h2 class="font-serif text-4xl md:text-6xl font-black mb-6 italic">Unveil Your Best Self</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-magic text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Cosmetic Dentistry</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Transform your smile into a masterpiece with our elite aesthetic treatments.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-tooth text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Teeth Whitening</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Unveil shining confidence with our premium, professional-grade brightening.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-crown text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Crowns & Bridges</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Restore your bite and functionality with durable, natural-looking restorations.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-vial text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Root Canal</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Experience pain-free healing with our advanced 3-D-guided endodontics.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-align-center text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Orthodontics</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Align with elegance using our subtle, high-performance straightening solutions.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group glass p-10 rounded-3xl transition-all duration-500 hover:-translate-y-2 gold-glow" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-500">
+                        <i class="fas fa-child text-gold text-3xl group-hover:text-navy transition-colors duration-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-4 italic">Pediatric Care</h3>
+                    <p class="text-white/60 leading-relaxed mb-6">Gentle, child-friendly smiles designed for the next generation of excellence.</p>
+                    <a href="#booking" class="text-gold font-bold flex items-center hover:text-white transition">
+                        Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 bg-gold/10 px-6 py-2 rounded-full mb-6">
+                    <div class="flex text-gold">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-navy font-bold">4.9/5 (388 Reviews)</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-black text-navy italic mb-4">Patient Experiences</h2>
+                <p class="text-gray-500 max-w-xl mx-auto italic">“Luxury is in the details, and so is our care.”</p>
+            </div>
+
+            <!-- Simple Carousel Logic with JS -->
+            <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+                <div id="testimonial-container" class="relative bg-navy rounded-[3rem] p-12 md:p-20 shadow-2xl overflow-hidden min-h-[400px] flex items-center">
+                    <div class="absolute top-10 right-10 text-gold/10 text-9xl font-serif leading-none">“</div>
+                    
+                    <div class="testimonial-slide active transition-all duration-500 w-full">
+                        <p class="text-white text-2xl md:text-3xl font-serif italic leading-relaxed mb-8">
+                            “The kindest and most professional staff I've ever encountered. Truly an elite experience from the moment you walk in.”
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center font-bold text-navy">JD</div>
+                            <div>
+                                <p class="text-white font-bold uppercase tracking-widest">James D.</p>
+                                <p class="text-gold text-xs uppercase tracking-widest italic">Patient since 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Credibility -->
+    <section class="py-16 bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-60 hover:opacity-100 transition-opacity">
+                <img src="https://via.placeholder.com/150x50/1E2B44/FFFFFF?text=ADA+Certified" alt="ADA" class="h-10 object-contain mx-auto">
+                <img src="https://via.placeholder.com/150x50/1E2B44/FFFFFF?text=Blue+Cross" alt="Blue Cross" class="h-10 object-contain mx-auto">
+                <img src="https://via.placeholder.com/150x50/1E2B44/FFFFFF?text=Aetna+Accepted" alt="Aetna" class="h-10 object-contain mx-auto">
+                <img src="https://via.placeholder.com/150x50/1E2B44/FFFFFF?text=Cigna+Gold" alt="Cigna" class="h-10 object-contain mx-auto">
+            </div>
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <p class="text-navy font-bold text-lg mb-4 italic">“Accepted by 98% of Florida insurance plans.”</p>
+                <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-semibold uppercase tracking-widest">
+                    <span class="flex items-center"><i class="fas fa-check-circle text-gold mr-2"></i> Transparent Pricing</span>
+                    <span class="flex items-center"><i class="fas fa-check-circle text-gold mr-2"></i> No Surprise Charges</span>
+                    <span class="flex items-center"><i class="fas fa-check-circle text-gold mr-2"></i> Flexible Financing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/3" data-aos="fade-right">
+                    <span class="text-gold font-bold uppercase tracking-widest block mb-4">Common Inquiries</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-black text-navy italic leading-tight mb-6">Frequently<br>Asked</h2>
+                    <p class="text-gray-500 leading-relaxed mb-8 italic">We believe in complete transparency. If your question isn't here, please reach out directly.</p>
+                    <a href="#contact" class="text-gold font-bold border-b-2 border-gold pb-1 hover:text-navy hover:border-navy transition">Contact Support</a>
+                </div>
+                <div class="lg:w-2/3" data-aos="fade-left">
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item border-b border-gray-200 pb-4">
+                            <button class="w-full flex justify-between items-center py-4 text-left font-bold text-navy text-xl hover:text-gold transition">
+                                Do you accept my insurance?
+                                <i class="fas fa-chevron-down text-gold text-sm transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-gray-600 py-4 italic leading-relaxed">
+                                    Yes, we are proud to be in-network with over 98% of Florida's major insurance providers, including Blue Cross Blue Shield, Aetna, Cigna, and UnitedHealthcare.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item border-b border-gray-200 pb-4">
+                            <button class="w-full flex justify-between items-center py-4 text-left font-bold text-navy text-xl hover:text-gold transition">
+                                What if I have dental anxiety?
+                                <i class="fas fa-chevron-down text-gold text-sm transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-gray-600 py-4 italic leading-relaxed">
+                                    Your comfort is our priority. We offer various sedation options and a calming, spa-like environment to ensure your visit is completely stress-free and painless.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item border-b border-gray-200 pb-4">
+                            <button class="w-full flex justify-between items-center py-4 text-left font-bold text-navy text-xl hover:text-gold transition">
+                                What’s your average wait time?
+                                <i class="fas fa-chevron-down text-gold text-sm transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-gray-600 py-4 italic leading-relaxed">
+                                    We value your time as much as you do. Our average wait time is less than 10 minutes, thanks to our efficient, state-of-the-art scheduling system.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item border-b border-gray-200 pb-4">
+                            <button class="w-full flex justify-between items-center py-4 text-left font-bold text-navy text-xl hover:text-gold transition">
+                                What payment options do you offer?
+                                <i class="fas fa-chevron-down text-gold text-sm transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="text-gray-600 py-4 italic leading-relaxed">
+                                    Beyond insurance, we offer flexible payment plans and financing options through CareCredit and our internal HOF Dental Membership program.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Urgency -->
+    <section id="booking" class="py-24 bg-navy text-white parallax relative" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=2000');">
+        <div class="absolute inset-0 bg-navy/90"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+                <span class="text-gold font-bold uppercase tracking-[0.3em] block mb-6 italic">Limited Time Exclusive</span>
+                <h2 class="font-serif text-5xl md:text-7xl font-black mb-8 italic">Restore Your Confidence</h2>
+                <p class="text-xl text-white/70 mb-12 font-light">Join the Florida elite. Book today and receive a 10% complimentary credit on your first transformative procedure.</p>
+                
+                <!-- Countdown -->
+                <div class="flex justify-center space-x-8 mb-12">
+                    <div class="text-center">
+                        <p class="text-4xl font-serif font-bold text-gold" id="hours">00</p>
+                        <p class="text-[10px] uppercase tracking-widest text-white/50">Hours</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-serif font-bold text-gold" id="minutes">00</p>
+                        <p class="text-[10px] uppercase tracking-widest text-white/50">Minutes</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-serif font-bold text-gold" id="seconds">00</p>
+                        <p class="text-[10px] uppercase tracking-widest text-white/50">Seconds</p>
+                    </div>
+                </div>
+
+                <a href="#contact" class="bg-gold hover:bg-gold-light text-navy px-12 py-6 rounded-full font-bold text-2xl transition-all gold-glow inline-block">
+                    Book Now – Get Your Free Smile Assessment
+                </a>
+                <p class="mt-8 text-white/40 text-sm italic">Daily special resets every midnight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="font-serif text-4xl md:text-5xl font-black text-navy mb-10 italic leading-tight">Visit the Sanctuary</h2>
+                    <div class="space-y-8 mb-12">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 bg-navy/5 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-navy font-bold text-lg uppercase tracking-widest mb-1">Our Location</p>
+                                <p class="text-gray-500 italic">123 Luxury Lane, Orlando, FL 32801</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 bg-navy/5 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-navy font-bold text-lg uppercase tracking-widest mb-1">Hours of Care</p>
+                                <p class="text-gray-500 italic">Mon - Fri: 8:00 AM - 6:00 PM</p>
+                                <p class="text-gray-500 italic">Sat: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 bg-navy/5 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-navy font-bold text-lg uppercase tracking-widest mb-1">Email Us</p>
+                                <p class="text-gray-500 italic">concierge@hofdental.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Map Embed Placeholder -->
+                    <div class="w-full h-80 rounded-3xl overflow-hidden shadow-2xl border border-gold/10">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112197.3114441421!2d-81.4544372!3d28.5028122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d2f281d717%3A0x62a35884e92ad105!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1710134400000!5m2!1sen!2sus" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="glass p-10 md:p-12 rounded-[3rem] shadow-2xl">
+                        <h3 class="font-serif text-3xl font-bold text-white mb-8 italic">Request Your Consultation</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="text-gold text-xs uppercase tracking-widest font-bold block mb-2">Full Name</label>
+                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-gold transition" placeholder="Johnathan Doe">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-gold text-xs uppercase tracking-widest font-bold block mb-2">Email</label>
+                                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-gold transition" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label class="text-gold text-xs uppercase tracking-widest font-bold block mb-2">Phone</label>
+                                    <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-gold transition" placeholder="(407) 555-0123">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-gold text-xs uppercase tracking-widest font-bold block mb-2">Appointment Type</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-gold transition appearance-none">
+                                    <option class="bg-navy">Cosmetic Consultation</option>
+                                    <option class="bg-navy">Routine Cleaning</option>
+                                    <option class="bg-navy">Orthodontic Review</option>
+                                    <option class="bg-navy">Other Inquiry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-gold text-xs uppercase tracking-widest font-bold block mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-gold transition" placeholder="How can we help you unveil your best smile?"></textarea>
+                            </div>
+                            <button class="w-full bg-gold hover:bg-gold-light text-navy py-5 rounded-full font-bold text-xl transition-all gold-glow uppercase tracking-widest">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-16 border-t border-gold/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col items-center mb-12">
+                <div class="w-16 h-16 border-2 border-gold rounded-full flex items-center justify-center mb-6">
+                    <span class="text-gold font-bold text-3xl italic">H</span>
+                </div>
+                <h3 class="font-serif text-3xl font-bold mb-4 italic tracking-widest">Schedule Your Appointment Today</h3>
+                <p class="text-white/50 max-w-xl italic">Experience the pinnacle of Florida dentistry. Personalized, painless, and profoundly transformative.</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="text-white/50 hover:text-gold transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white/50 hover:text-gold transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white/50 hover:text-gold transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/30 uppercase tracking-[0.2em] font-bold">
+                <p>&copy; 2026 Heart Of Florida Dental. All Rights Reserved.</p>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Voice Receptionist Widget -->
+    <div id="ai-agent" class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+        <!-- Chat Window -->
+        <div id="ai-chat-window" class="hidden w-80 mb-4 bg-navy rounded-3xl shadow-2xl border border-gold/20 overflow-hidden transform transition-all duration-300 scale-95 opacity-0 origin-bottom-right">
+            <div class="p-6 border-b border-gold/10 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold ai-pulse">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Elena</h4>
+                        <p class="text-gold text-[10px] uppercase tracking-widest">AI Receptionist</p>
+                    </div>
+                </div>
+                <button onclick="toggleAIChat()" class="text-white/50 hover:text-white transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="ai-messages" class="p-6 h-64 overflow-y-auto space-y-4 text-sm scroll-smooth">
+                <div class="bg-white/5 rounded-2xl p-4 text-white italic border border-white/5">
+                    "Welcome to Heart of Florida Dental. I'm Elena, your AI concierge. How can I assist with your smile today?"
+                </div>
+            </div>
+
+            <div class="p-4 bg-navy/50 border-t border-gold/10">
+                <div id="ai-voice-indicator" class="hidden flex items-center justify-center space-x-2 py-2 mb-2">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="ai-mic-btn" onclick="startVoiceRecognition()" class="w-12 h-12 rounded-full bg-gold text-navy flex items-center justify-center transition-all hover:scale-105 active:scale-95">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <input id="ai-text-input" type="text" placeholder="Ask about services or booking..." class="flex-1 bg-white/5 border border-white/10 rounded-full px-4 text-white text-xs focus:outline-none focus:border-gold">
+                    <button onclick="handleTextSubmit()" class="w-12 h-12 rounded-full bg-white/5 text-gold flex items-center justify-center hover:bg-white/10">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleAIChat()" class="w-16 h-16 bg-navy rounded-full shadow-2xl border border-gold/30 flex items-center justify-center text-gold text-2xl hover:scale-105 transition-all ai-pulse group">
+            <i class="fas fa-comment-dots group-hover:hidden"></i>
+            <i class="fas fa-times hidden group-hover:block"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'bg-navy/95');
+                header.classList.remove('py-4', 'glass');
+            } else {
+                header.classList.add('py-4', 'glass');
+                header.classList.remove('py-2', 'bg-navy/95');
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.accordion-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Testimonials Carousel (Simple)
+        const testimonials = [
+            {
+                text: "“The kindest and most professional staff I've ever encountered. Truly an elite experience from the moment you walk in.”",
+                author: "James D.",
+                sub: "Patient since 2021"
+            },
+            {
+                text: "“No pain, no anxieties. Dr. Ciaravino is a true artist who actually cares about his patients' comfort.”",
+                author: "Sarah M.",
+                sub: "Invisalign Patient"
+            },
+            {
+                text: "“Efficient, on time, and no pushy upsells. Just honest advice and world-class dental work.”",
+                author: "Robert K.",
+                sub: "Cosmetic Restoration"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const container = document.getElementById('testimonial-container');
+
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            const slide = container.querySelector('.testimonial-slide');
+            
+            slide.style.opacity = 0;
+            slide.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                slide.querySelector('p').innerText = testimonials[currentTestimonial].text;
+                slide.querySelector('.font-bold').innerText = testimonials[currentTestimonial].author;
+                slide.querySelector('.italic').innerText = testimonials[currentTestimonial].sub;
+                slide.querySelector('.w-12').innerText = testimonials[currentTestimonial].author.split(' ').map(n => n[0]).join('');
+                
+                slide.style.opacity = 1;
+                slide.style.transform = 'translateY(0)';
+            }, 500);
+        }, 6000);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const diff = tomorrow - now;
+
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // AI Voice Receptionist Logic
+        const chatWindow = document.getElementById('ai-chat-window');
+        const messagesContainer = document.getElementById('ai-messages');
+        const micBtn = document.getElementById('ai-mic-btn');
+        const voiceIndicator = document.getElementById('ai-voice-indicator');
+        const textInput = document.getElementById('ai-text-input');
+
+        function toggleAIChat() {
+            if (chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                chatWindow.classList.remove('scale-100', 'opacity-100');
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatWindow.classList.add('hidden'), 300);
+            }
+        }
+
+        const responses = {
+            "book": "Of course! You can book a consultation directly through our booking section below. Would you like me to scroll there for you?",
+            "services": "We offer elite Cosmetic Dentistry, Teeth Whitening, Crowns, Root Canals, Orthodontics, and Pediatric Care. Which one would you like to know more about?",
+            "insurance": "We accept over 98% of Florida insurance plans, including Blue Cross, Aetna, and Cigna. I can check your specific plan if you'd like.",
+            "price": "We believe in transparency. Our pricing is upfront with no surprise charges. We also offer flexible payment plans.",
+            "hello": "Hello! I'm Elena, your AI receptionist. How can I help you today?",
+            "hi": "Hi there! Welcome to Heart of Florida Dental. How can I assist you?",
+            "default": "That's a great question. I'm still learning, but I can help you book an appointment or tell you about our services. What would you prefer?"
+        };
+
+        function addMessage(text, isUser = false) {
+            const div = document.createElement('div');
+            div.className = isUser ? 'bg-gold/10 rounded-2xl p-4 text-white ml-8 border border-gold/10' : 'bg-white/5 rounded-2xl p-4 text-white italic border border-white/5';
+            div.innerHTML = text;
+            messagesContainer.appendChild(div);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            if (!isUser) speak(text);
+        }
+
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.pitch = 1.1;
+                utterance.rate = 1;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function handleAIResponse(input) {
+            const lowerInput = input.toLowerCase();
+            let response = responses.default;
+
+            if (lowerInput.includes('book') || lowerInput.includes('appointment')) response = responses.book;
+            else if (lowerInput.includes('service')) response = responses.services;
+            else if (lowerInput.includes('insurance')) response = responses.insurance;
+            else if (lowerInput.includes('price') || lowerInput.includes('cost')) response = responses.price;
+            else if (lowerInput.includes('hello') || lowerInput.includes('hi')) response = responses.hello;
+
+            setTimeout(() => {
+                voiceIndicator.classList.add('hidden');
+                addMessage(response);
+                if (response === responses.book) {
+                    setTimeout(() => document.getElementById('booking').scrollIntoView({ behavior: 'smooth' }), 2000);
+                }
+            }, 1000);
+        }
+
+        function handleTextSubmit() {
+            const text = textInput.value.trim();
+            if (text) {
+                addMessage(text, true);
+                textInput.value = '';
+                voiceIndicator.classList.remove('hidden');
+                handleAIResponse(text);
+            }
+        }
+
+        textInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleTextSubmit();
+        });
+
+        // Voice Recognition Simulation
+        function startVoiceRecognition() {
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.onstart = () => {
+                    micBtn.classList.add('bg-red-500', 'animate-pulse');
+                    voiceIndicator.classList.remove('hidden');
+                };
+
+                recognition.onresult = (event) => {
+                    const transcript = event.results[0][0].transcript;
+                    addMessage(transcript, true);
+                    handleAIResponse(transcript);
+                };
+
+                recognition.onend = () => {
+                    micBtn.classList.remove('bg-red-500', 'animate-pulse');
+                    voiceIndicator.classList.add('hidden');
+                };
+
+                recognition.start();
+            } else {
+                alert("Voice recognition is not supported in this browser. Please use the text input.");
+            }
+        }
+    </script>
+</body>
+</html>
